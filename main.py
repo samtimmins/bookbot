@@ -46,8 +46,9 @@ def print_report(book_path, word_count, character_dictionary):
     print(f"--- Begin report of {book_path}---")
     print(f"{word_count} words found in the document")
 
-    for char in character_dictionary:
-        print(f"The {char} character was found {character_dictionary[char]} times")
+    for char in sorted(character_dictionary):
+        if char.isalpha():
+            print(f"The {char} character was found {character_dictionary[char]} times")
 
     print(f"--- End report ---")
 
